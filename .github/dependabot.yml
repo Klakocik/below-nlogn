@@ -1,0 +1,16 @@
+# Keep the GitHub Actions we use (currently just actions/checkout) up to date.
+# Dependabot opens a small PR per bump; CI runs on each PR like any other.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    # One combined PR per month instead of a pile of individual bumps.
+    groups:
+      github-actions:
+        patterns: ["*"]
+    commit-message:
+      prefix: "ci"
+    labels:
+      - "dependencies"
