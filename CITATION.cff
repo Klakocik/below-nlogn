@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, cite the paper and this repository."
+title: "below-nlogn: experimental Rust toolbox for 'Integer multiplication below n log n'"
+authors:
+  - name: "below-nlogn contributors"
+references:
+  - type: article
+    title: "Integer multiplication below n log n"
+    authors:
+      - name: "OpenAI"
+    year: 2026
+    month: 9
+    notes: "OpenAI Math Release preprint, September 23, 2026"
+    url: "https://github.com/openai/math/tree/main/preprints/Integer-multiplication-below-n-log-n-September-23-2026"
+  - type: article
+    title: "Integer Multiplication in Time O(n log n)"
+    authors:
+      - family-names: Harvey
+        given-names: David
+      - family-names: van der Hoeven
+        given-names: Joris
+    journal: "Annals of Mathematics"
+    volume: 193
+    number: 2
+    start: 563
+    end: 617
+    year: 2021
+    doi: "10.4007/annals.2021.193.2.4"
+    url: "https://www.texmacs.org/joris/nlogn/nlogn.pdf"

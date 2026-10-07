@@ -1,0 +1,41 @@
+[package]
+name = "below-nlogn"
+version = "0.1.0"
+edition = "2021"
+description = "Experimental, dependency-free implementation of the gadgets behind the OpenAI paper 'Integer multiplication below n log n' (Sept 23, 2026)"
+license = "Apache-2.0"
+keywords = ["bigint", "multiplication", "fft", "ntt", "research"]
+categories = ["algorithms", "mathematics"]
+
+[lib]
+name = "below_nlogn"
+path = "src/lib.rs"
+
+[[bin]]
+name = "below-nlogn"
+path = "src/bin/below-nlogn.rs"
+
+[[bench]]
+name = "bench"
+path = "benches/bench.rs"
+harness = false
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+debug = false
+
+[profile.bench]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+
+[dependencies]
+
+[lints.clippy]
+# The motif schedule and transform recursion index arrays explicitly to mirror
+# the paper's formulations; explicit indices are clearer than iterators there.
+needless_range_loop = "allow"
+# `a % b == 0` reads closer to the mathematical statements.
+manual_is_multiple_of = "allow"
